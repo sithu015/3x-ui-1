@@ -192,16 +192,6 @@ func (j *CheckClientIpJob) checkError(e error) {
 	}
 }
 
-func (j *CheckClientIpJob) contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-
-	return false
-}
-
 func (j *CheckClientIpJob) getInboundClientIps(clientEmail string) (*model.InboundClientIps, error) {
 	db := database.GetDB()
 	InboundClientIps := &model.InboundClientIps{}
